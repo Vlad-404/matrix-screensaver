@@ -32,4 +32,15 @@ const createSpan = () => {
 
 }
 
-setInterval(createSpan, 2000)
+const startLetters = setInterval(createSpan, 300)
+
+startLetters
+
+window.addEventListener('click', () => {
+  // if(startLetters) {
+  //   clearInterval(startLetters)
+  // } else {
+  //   setInterval(createSpan, 300)
+  // }
+  startLetters ? clearInterval(startLetters) : startLetters
+})
