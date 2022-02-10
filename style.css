@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400&display=swap');
 
 body {
+  background-color: #000;
   font-family: 'Inconsolata', 'consolas';
   display: flex;
   flex-direction: column;   /* aligns items vertically */
@@ -15,3 +16,8 @@ body {
   box-sizing: border-box;
 }
 
+.container {
+  color: #399245;
+  word-wrap: break-word;
+  width: 10px;
+}
