@@ -7,10 +7,6 @@
 body {
   background-color: #000;
   font-family: 'Inconsolata', 'consolas';
-  display: flex;
-  flex-direction: column;   /* aligns items vertically */
-  align-items: center;      /* centers items in the middle of a column */
-  justify-content: center;  /* aligns items horizontally */
   height: 100vh;
   overflow: hidden;
   margin: 0;
@@ -20,25 +16,31 @@ body {
   box-sizing: border-box;
 }
 
-.container {
+#container {
+  background-color: #000;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+}
+
+.letters {
   color: var(--green);
   word-wrap: break-word;
   width: 10px;
   position: absolute;
-  top: 150px;
-  left: 400px;
-  opacity: .5;
   animation: fade 5s linear, glow 5s ease-in-out;
 }
 
 @keyframes fade {
   0%, 100% { opacity: 0 }
-  50% { opacity: .5 }
+  50% { opacity: 1.2 }
 }
 
+/* code from w3schools */
 @keyframes glow {
   from { 
-    text-shadow: 0 0 20px #fff, 0 0 40px var(--green), 0 0 60px var(--green), 0 0 70px var(--green);
+    text-shadow: 0 0 20px #fff, 0 0 40px var(--green), 0 0 60px var(--green);
   } to {
     text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff, 0 0 80px #fff;
   }
