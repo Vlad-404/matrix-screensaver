@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400&display=swap');
 
+:root {
+  --green: #399245;
+}
+
 body {
   background-color: #000;
   font-family: 'Inconsolata', 'consolas';
@@ -17,17 +21,25 @@ body {
 }
 
 .container {
-  color: #399245;
+  color: var(--green);
   word-wrap: break-word;
   width: 10px;
   position: absolute;
   top: 150px;
   left: 400px;
   opacity: .5;
-  animation: fade 5s linear;
+  animation: fade 5s linear, glow 5s ease-in-out;
 }
 
 @keyframes fade {
   0%, 100% { opacity: 0 }
   50% { opacity: .5 }
+}
+
+@keyframes glow {
+  from { 
+    text-shadow: 0 0 20px #fff, 0 0 40px var(--green), 0 0 60px var(--green), 0 0 70px var(--green);
+  } to {
+    text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff, 0 0 80px #fff;
+  }
 }
