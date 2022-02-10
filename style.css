@@ -29,6 +29,7 @@ body {
   word-wrap: break-word;
   width: 10px;
   position: absolute;
+  opacity: 0;
   animation: fade 5s linear, glow 5s ease-in-out;
 }
 
