@@ -20,4 +20,14 @@ body {
   color: #399245;
   word-wrap: break-word;
   width: 10px;
+  position: absolute;
+  top: 150px;
+  left: 400px;
+  opacity: .5;
+  animation: fade 5s linear;
+}
+
+@keyframes fade {
+  0%, 100% { opacity: 0 }
+  50% { opacity: .5 }
 }
