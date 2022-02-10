@@ -1,11 +1,12 @@
 const container = document.getElementById('container')
 
-// const letters = document.createElement('span')
-// letters.classList.add('letters')
+let randomW = Math.trunc(Math.random() * window.innerWidth);
+let randomH = Math.trunc(Math.random() * window.innerHeight);
 
-// letters.innerText = 'random characters'
+console.log(randomW, randomH)
+
 container.innerHTML = `
-  <span class="letters" style="top: 400px; left: 300px;">Other random chars</span>
+  <span class="letters" style="top: ${randomH}px; left: ${randomW}px;">Other random chars</span>
 `
 
 console.log(container)
