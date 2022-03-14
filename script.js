@@ -16,8 +16,16 @@ const getRandomChar = () => {
 // console.log(getRandomChar())
 
 const generateText = () => {
+  let randomSymbols = []
 
+  for(let i=0; i<10; i++) {
+    randomSymbols.push(getRandomChar());
+  }
+
+  return randomSymbols.join('')
 }
+
+generateText()
 
 const createSpan = () => {
   let randomW = Math.trunc(Math.random() * window.innerWidth);
@@ -27,7 +35,7 @@ const createSpan = () => {
   let textContainer = document.createElement('span')
   textContainer.classList.add('letters')
   // console.log(textContainer)
-  textContainer.textContent = randomText
+  textContainer.textContent = generateText()
 
   let attributes = {
     style: `top: ${randomH}px; left: ${randomW}px;`
