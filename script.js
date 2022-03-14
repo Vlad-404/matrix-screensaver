@@ -8,16 +8,26 @@ let setAttributes = (element, attributes) => {
 }
 // end code snippet
 
+// randomise text
+const getRandomChar = () => {
+  return String.fromCharCode(Math.floor(Math.random() * 93) + 33)
+}
+
+// console.log(getRandomChar())
+
+const generateText = () => {
+
+}
+
 const createSpan = () => {
   let randomW = Math.trunc(Math.random() * window.innerWidth);
   let randomH = Math.trunc(Math.random() * window.innerHeight);
-
-  console.log(randomW, randomH)
+  let randomText = 'Random Text'
 
   let textContainer = document.createElement('span')
   textContainer.classList.add('letters')
-  console.log(textContainer)
-  textContainer.textContent = 'Random Text'
+  // console.log(textContainer)
+  textContainer.textContent = randomText
 
   let attributes = {
     style: `top: ${randomH}px; left: ${randomW}px;`
@@ -32,15 +42,16 @@ const createSpan = () => {
 
 }
 
-const startLetters = setInterval(createSpan, 300)
-
+let startLetters = setInterval(createSpan, 1000)
 startLetters
 
 window.addEventListener('click', () => {
-  // if(startLetters) {
-  //   clearInterval(startLetters)
-  // } else {
-  //   setInterval(createSpan, 300)
-  // }
-  startLetters ? clearInterval(startLetters) : startLetters
+  // document.querySelectorAll('span').length != 0 ? clearInterval(startLetters) : startLetters
+  if(document.querySelectorAll('span').length != 0) {
+    clearInterval(startLetters)
+  } else {
+    startLetters
+    console.log('It should start now')
+  }
+  console.log(document.querySelectorAll('span').length)
 })
